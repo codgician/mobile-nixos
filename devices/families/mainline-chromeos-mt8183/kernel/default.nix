@@ -11,9 +11,8 @@ mobile-nixos.kernel-builder {
 
   src = fetchgit {
     url = "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git";
-    ref = "refs/tags/v6.6.11";
+    rev = "22852eaf43ec64b7dc0aa72687b22237b65a88f9";
     deepClone = false;
-    leaveDotGit = false;
     sha256 = "14vqf1c16i8q5vz1m1wynp145mfv4gl2z35nnd103ppz4y8p3plr";
   };
 
