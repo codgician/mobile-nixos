@@ -1,6 +1,6 @@
 {
   mobile-nixos
-  , fetchurl
+  , fetchgit
   , fetchpatch
   , ... 
 }:
@@ -9,9 +9,12 @@ mobile-nixos.kernel-builder {
   version = "6.6.11";
   configfile = ./config.aarch64;
 
-  src = fetchurl {
-    url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.11.tar.xz";
-    sha256 = "0lhyczcj1fhh52fjf06ikp5yh7kxc1qymsw44rv6v25vc6kfbqmg";
+  src = fetchgit {
+    url = "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git";
+    ref = "refs/tags/v6.6.11";
+    deepClone = false;
+    leaveDotGit = false;
+    sha256 = "14vqf1c16i8q5vz1m1wynp145mfv4gl2z35nnd103ppz4y8p3plr";
   };
 
   patches = [
