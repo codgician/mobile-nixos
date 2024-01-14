@@ -46,7 +46,7 @@ SUPPORT_LEVEL_ORDER = [
 ]
 
 def githubURL(device)
-  "https://github.com/NixOS/mobile-nixos/tree/master/devices/#{device}"
+  "https://github.com/codgician/mobile-nixos/tree/fix/devices/#{device}"
 end
 
 def hydraURL(job)

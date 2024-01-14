@@ -107,7 +107,7 @@ end
 # We don't publish "known good" channel releases yet for Mobile NixOS.
 channels = [
   ["https://nixos.org/channels/nixos-unstable", "nixos"],
-  ["https://github.com/NixOS/mobile-nixos/archive/refs/heads/master.tar.gz", "mobile-nixos"],
+  ["https://github.com/codgician/mobile-nixos/archive/refs/heads/fix.tar.gz", "mobile-nixos"],
 ].map{|pair| pair.join(" ") }.join("\n")
 File.write(File.join(MOUNT_POINT, "/root/.nix-channels"), channels)
 
