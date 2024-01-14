@@ -11,7 +11,7 @@ mobile-nixos.kernel-builder {
 
   src = fetchurl {
     url = "mirror://kernel/linux/kernel/v6.x/linux-6.6.11.tar.xz";
-    sha256 = "0lhyczcj1fhh52fjf06ikp5yh7kxc1qymsw44rv6v25vc6kfbqmg";
+    sha256 = "sha256-r+LlpmG7iG12JoTr6nFgfR7oy53RACedKBC6INlnHlI=";
   };
 
   patches = [ ];
