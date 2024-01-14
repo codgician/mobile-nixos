@@ -13,7 +13,7 @@ mobile-nixos.kernel-builder {
     url = "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git";
     rev = "22852eaf43ec64b7dc0aa72687b22237b65a88f9";
     deepClone = false;
-    sha256 = "14vqf1c16i8q5vz1m1wynp145mfv4gl2z35nnd103ppz4y8p3plr";
+    sha256 = "sha256-uyOi5VZ5mqoknmrBcmuvEGtpwmvIquH1gN4cWGNqdxc=";
   };
 
   patches = [
