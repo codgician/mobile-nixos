@@ -1,6 +1,6 @@
 {
   mobile-nixos
-  , fetchgit
+  , fetchFromGitHub
   , fetchpatch
   , ... 
 }:
