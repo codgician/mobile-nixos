@@ -1,19 +1,17 @@
 {
   mobile-nixos
-, fetchFromGitHub
-, fetchpatch
-, ...
+  , fetchurl
+  , fetchpatch
+  , ... 
 }:
 
 mobile-nixos.kernel-builder {
-  version = "6.5.0";
+  version = "6.6.11";
   configfile = ./config.aarch64;
 
-  src = fetchFromGitHub {
-    owner = "torvalds";
-    repo = "linux";
-    rev = "v6.5";
-    sha256 = "sha256-qJmVSju69WcvDIbgrbtMyCi+OXUNTzNX2G+/0zwsPR4=";
+  src = fetchurl {
+    url = "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.6.11.tar.xz";
+    sha256 = "0lhyczcj1fhh52fjf06ikp5yh7kxc1qymsw44rv6v25vc6kfbqmg";
   };
 
   patches = [
