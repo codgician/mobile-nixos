@@ -1,20 +1,27 @@
 {
   mobile-nixos
-  , fetchurl
-  , fetchpatch
-  , ... 
+, fetchFromGitHub
+, fetchpatch
+, ...
 }:
 
 mobile-nixos.kernel-builder {
-  version = "6.6.11";
+  version = "6.5.0";
   configfile = ./config.aarch64;
 
-  src = fetchurl {
-    url = "mirror://kernel/linux/kernel/v6.x/linux-6.6.11.tar.xz";
-    sha256 = "sha256-r+LlpmG7iG12JoTr6nFgfR7oy53RACedKBC6INlnHlI=";
+  src = fetchFromGitHub {
+    owner = "torvalds";
+    repo = "linux";
+    rev = "v6.5";
+    sha256 = "sha256-qJmVSju69WcvDIbgrbtMyCi+OXUNTzNX2G+/0zwsPR4=";
   };
 
-  patches = [ 
+  patches = [
+    # arm64: dts: mediatek: kukui: Configure scp firmware filename
+    (fetchpatch {
+      url = "https://github.com/samueldr/linux/commit/7b624a52f799ab01f36989146de43b0ef51f33fd.patch";
+      sha256 = "sha256-gop3rD/vroudrTAbf2hWhBqrTAzRXlWEo22bB1ID0QA=";
+    })
     # CHROMIUM: Revert "serial: 8250_mtk: Fix UART_EFR register address"
     # https://chromium-review.googlesource.com/c/chromiumos/third_party/kernel/+/3670640
     (fetchpatch {
