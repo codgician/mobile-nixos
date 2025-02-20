@@ -7,6 +7,6 @@ import ../../lib/eval-with-configuration.nix (args // {
     You can build the `-A outputs.default` attribute to build the default output
     for your device.
 
-     $ nix-build examples/plasma-mobile --argstr device ${device} -A outputs.default
+     $ nix-build examples/hello-but-squashfs --argstr device ${device} -A outputs.default
   '';
 })
